@@ -18,7 +18,7 @@
 
         "secondrunCommand": {
 
-            "commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass \"&', 'Start-Process update-econnecteur.exe', '-ArgumentList \"/SILENT\", \"/NOCANCEL\", \"/NORESTART\", \"/FORCECLOSEAPPLICATIONS\"', ' -Wait', '\"')]"
+            "commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass \"&', 'Start-Process C:\\ECO\\update-econnecteur.exe', '-ArgumentList \"/SILENT\", \"/NOCANCEL\", \"/NORESTART\", \"/FORCECLOSEAPPLICATIONS\"', ' -Wait', '\"')]"
 
         }
     }
