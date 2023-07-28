@@ -12,7 +12,7 @@
         
         "runCommand": {
 
-            "commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass \"&', 'Invoke-WebRequest -Uri https://builds.vaisonet.com/liveupdate_server/update-econnecteur.exe', '-OutFile C:\\ECO\\update-econnecteur.exe', '\"')]"
+            "commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass \"&', 'Invoke-WebRequest -Uri https://builds.vaisonet.com/liveupdate_server/update-econnecteur.exe', '-OutFile C:\ECO\update-econnecteur.exe', '\"')]"
 
         },
 
