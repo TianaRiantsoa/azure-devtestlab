@@ -6,20 +6,9 @@
     "tags": [
         "EC"
     ],
-    "iconUri": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/Artifacts/windows-run-powershell/powershell.png",
+    "iconUri": "https://raw.githubusercontent.com/Vaisonet/azure-devtestlab/master/Artifacts/windows-install-econnecteur/EC.png",
     "targetOsType": "Windows",
-    
-        
-        "runCommand": {
-
-            "commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass \"&', 'Invoke-WebRequest -Uri https://builds.vaisonet.com/liveupdate_server/update-econnecteur.exe', '-OutFile C:\ECO\update-econnecteur.exe', '\"')]"
-
-        },
-
-        "secondrunCommand": {
-
-            "commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass \"&', 'Start-Process C:\\ECO\\update-econnecteur.exe', '-ArgumentList \"/SILENT\", \"/NOCANCEL\", \"/NORESTART\", \"/FORCECLOSEAPPLICATIONS\"', ' -Wait', '\"')]"
-
-        }
+    "runCommand": {
+        "commandToExecute": "powershell.exe -ExecutionPolicy bypass \"& ./artifact.ps1\""
+      }
     }
-        
