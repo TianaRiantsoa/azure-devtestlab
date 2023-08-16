@@ -1,16 +1,17 @@
-Invoke-WebRequest -Uri https://builds.vaisonet.com/liveupdate_server/update-econnecteur.exe -OutFile C:\ECO\update-econnecteur.exe
+pushd C:\ECO\
 
-$exePath = "C:\ECO\update-econnecteur.exe"
-$arguments = "/SILENT", "/NOCANCEL", "/NORESTART", "/FORCECLOSEAPPLICATIONS"
+try {
+Invoke-WebRequest -UseBasicParsing -Uri https://builds.vaisonet.com/liveupdate_server/update-econnecteur.exe -OutFile C:\ECO\update-econnecteur.exe
 
-Start-Process -FilePath $exePath -ArgumentList $arguments -Wait
+Start-Process update-econnecteur.exe -ArgumentList "/SILENT", "/NOCANCEL", "/NORESTART", "/FORCECLOSEAPPLICATIONS" -Wait
 
-$exitCode = $LASTEXITCODE
 
-if ($exitCode -eq 0) {
-    Write-Host "La commande s'est exécutée avec succès."
-    exit 0
-} else {
-    Write-Host "Une erreur s'est produite lors de l'exécution de la commande."
-    exit 1
+}
+
+finally 
+
+{
+
+popd
+
 }
