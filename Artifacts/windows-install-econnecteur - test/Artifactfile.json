@@ -1,6 +1,6 @@
 {
     "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2016-11-28/dtlArtifacts.json",
-    "title": "Install E-Connecteur",
+    "title": "Install E-Connecteur - Test",
     "description": "Use this to download and install latest E-Connecteur stable version",
     "publisher": "Vaisonet",
     "tags": [
