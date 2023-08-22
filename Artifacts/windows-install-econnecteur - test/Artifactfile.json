@@ -1,0 +1,14 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2016-11-28/dtlArtifacts.json",
+    "title": "Install E-Connecteur",
+    "description": "Use this to download and install latest E-Connecteur stable version",
+    "publisher": "Vaisonet",
+    "tags": [
+        "EC"
+    ],
+    "iconUri": "https://raw.githubusercontent.com/Vaisonet/azure-devtestlab/master/Artifacts/windows-install-econnecteur/EC.png",
+    "targetOsType": "Windows",
+    "runCommand": {
+        "commandToExecute": "powershell.exe -ExecutionPolicy bypass \"& ./artifact.ps1\""
+      }
+    }
