@@ -1,0 +1,79 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "newVMName": {
+            "defaultValue": "AU-ECTV8-W10",
+            "type": "string"
+        },
+        "labName": {
+            "defaultValue": "Lab-test-E-Connecteur",
+            "type": "string"
+        },
+        "size": {
+            "defaultValue": "Standard_B2s",
+            "type": "string"
+        },
+        "userName": {
+            "defaultValue": "ECT10",
+            "type": "string"
+        },
+        "password": {
+            "defaultValue": "xxxxxxxxxxxxxxxxxxxxx",
+            "type": "securestring"
+        }
+    },
+    "variables": {
+        "labSubnetName": "VMs",
+        "labVirtualNetworkId": "[resourceId('Microsoft.DevTestLab/labs/virtualnetworks', parameters('labName'), variables('labVirtualNetworkName'))]",
+        "labVirtualNetworkName": "network-test-eco",
+        "vmId": "[resourceId ('Microsoft.DevTestLab/labs/virtualmachines', parameters('labName'), parameters('newVMName'))]",
+        "vmName": "[concat(parameters('labName'), '/', parameters('newVMName'))]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.DevTestLab/labs/virtualmachines",
+            "apiVersion": "2018-10-15-preview",
+            "name": "[concat(variables('vmName'), '-', padLeft(copyIndex(), 1, '0'))]",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "labVirtualNetworkId": "[variables('labVirtualNetworkId')]",
+                "notes": "ECTV8-W10",
+                "customImageId": "/subscriptions/06ed4f94-cf0b-4e7f-8205-9a87759e6cbb/resourcegroups/environnements-de-tests-eco/providers/microsoft.devtestlab/labs/lab-test-e-connecteur/customimages/ectv8-w10ci",
+                "size": "[parameters('size')]",
+                "userName": "[parameters('userName')]",
+                "password": "[parameters('password')]",
+                "isAuthenticationWithSshKey": false,
+                "artifacts": [
+                    {
+                        "artifactId": "[resourceId('Microsoft.DevTestLab/labs/artifactSources/artifacts', parameters('labName'), 'public repo', 'windows-install-windows-updates')]"
+                    }
+                ],
+                "labSubnetName": "[variables('labSubnetName')]",
+                "disallowPublicIpAddress": true,
+                "storageType": "Standard",
+                "allowClaim": true,
+                "networkInterface": {
+                    "sharedPublicIpAddressConfiguration": {
+                        "inboundNatRules": [
+                            {
+                                "transportProtocol": "tcp",
+                                "backendPort": 3389
+                            }
+                        ]
+                    }
+                }
+            },
+            "copy": {
+                "name": "[parameters('newVMName')]",
+                "count": 3
+            }
+        }
+    ],
+    "outputs": {
+        "labVMId": {
+            "type": "string",
+            "value": "[variables('vmId')]"
+        }
+    }
+}
