@@ -1,0 +1,6 @@
+{
+    "itemDisplayName": "US-ECTV8-W10",
+    "description": "Le template crée une VM Windows 10 utilisateur avec E-Connecteur V8",
+    "githubUsername": "V-kwoink",
+    "summary": "Déploie une VM Windows 10 avec E-Connecteur V8"
+  }
