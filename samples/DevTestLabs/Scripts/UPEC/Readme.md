@@ -1,0 +1,1 @@
+Script permettant d'installer les dernieres version de preview de E-Connecteur ou stable.
