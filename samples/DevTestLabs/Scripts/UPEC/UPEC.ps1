@@ -1,6 +1,6 @@
 while ($true) {
 
-$choix = Read-Host "Quelle Version ?`n1 - EC Core stable`n2 - EC pr� version"
+$choix = Read-Host "Quelle Version ?`n1 - EC Core stable`n2 - EC pre-release"
 
 if ($choix -notmatch '^\d+$') {
 
