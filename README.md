@@ -10,7 +10,6 @@ This is a public, community-contributed repository that contains:
 
 - **Azure Pipelines Tasks for Azure DevTest Labs:** This is the source code used to author Azure Pipelines tasks specifically geared to demonstrate use of Azure DevTest Labs in builds/releases. Refer to [Azure DevTest Labs Tasks](https://marketplace.visualstudio.com/items?itemName=ms-azuredevtestlabs.tasks) for more information and to install.
 
-
 ## Azure DevTest Labs PowerShell Module
 
 [Az.DevTestLabs](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/Modules/Library) is a PowerShell module to simplify the management of [Azure DevTest Labs](https://azure.microsoft.com/en-us/services/devtest-lab/). It provides composable functions to create, query, update and delete labs, VMs, Custom Images and Environments. The source can be located under [/samples/DevTestLabs/Modules/Library/](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/Modules/Library).
@@ -18,7 +17,9 @@ This is a public, community-contributed repository that contains:
 ## Azure Lab Services PowerShell Module
 
 [Az.LabServices](https://github.com/Azure/azure-devtestlab/tree/master/samples/ClassroomLabs/Modules/Library) is a PowerShell module to simplify the management of [Azure Lab Services](https://azure.microsoft.com/en-us/services/lab-services/). It provides composable functions to create, query, update and delete lab accounts, labs, VMs and Images. The source can be located under [/samples/ClassroomLabs/Modules/Library/](https://github.com/Azure/azure-devtestlab/tree/master/samples/ClassroomLabs/Modules/Library).
+
 >### Azure Lab Services April 2022 update (preview)
+>
 >If you are using the update (with lab plans) the [Lab Services module](https://www.powershellgallery.com/packages/Az.LabServices/0.1.0) is available in the PowerShell gallery.  There is a dedicated [Lab Services repository](https://github.com/Azure/LabServices) with samples for the updated modules and the improved service.
 
 ## Contributions
